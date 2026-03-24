@@ -14,19 +14,9 @@
           config = { };
         };
 
-        # macOS needs the Apple SDK frameworks for GLFW/OpenGL.
-        darwinFrameworks = pkgs.lib.optionals pkgs.stdenv.isDarwin (with pkgs.darwin.apple_sdk.frameworks; [
-          Cocoa
-          OpenGL
-          IOKit
-          CoreFoundation
-          CoreVideo
-          QuartzCore
-        ]);
-
         buildInputs = with pkgs; [
           glfw
-        ] ++ darwinFrameworks;
+        ];
 
         nativeBuildInputs = with pkgs; [
           cmake
