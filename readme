@@ -26,15 +26,53 @@ Topics explored:
 
 ```
 race-track-engine/
-├── readme          ← you are here
-├── UNLICENSE       ← license
-└── src/            ← engine source (to be implemented)
+├── readme            ← you are here
+├── UNLICENSE         ← license
+├── flake.nix         ← Nix flake (dev shell + package)
+├── CMakeLists.txt    ← CMake build definition
+└── src/
+    └── main.c        ← entry point (GLFW window + game loop)
 ```
 
 ## Getting started
 
-> This project is a work in progress. Implementation notes and build
-> instructions will be added here as the code evolves.
+### Prerequisites
+
+- [Nix](https://nixos.org/download/) with [flakes enabled](https://nixos.wiki/wiki/Flakes)
+- macOS (the Nix flake automatically links the required Apple SDK frameworks)
+
+### Enter the development shell
+
+```sh
+nix develop
+```
+
+This drops you into a shell with `cmake`, `pkg-config`, `glfw`, and
+`clang-tools` (clangd / clang-format) available.
+
+### Build
+
+```sh
+cmake -B build
+cmake --build build
+```
+
+The compiled binary is written to `build/race-track-engine`.
+
+### Run
+
+```sh
+./build/race-track-engine
+```
+
+Press **Escape** to close the window.
+
+### Build as a Nix package
+
+```sh
+nix build
+./result/bin/race-track-engine
+```
 
 ## License
 
