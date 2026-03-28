@@ -1,0 +1,28 @@
+# race-track-engine
+
+A toy project to explore how to build a simple racing track engine for a tiny game.
+
+## Overview
+
+`race-track-engine` is an educational experiment aimed at understanding the
+core mechanics behind a racing game engine. The goal is to keep things small
+and focused — no large frameworks, just the fundamental ideas of how a track,
+cars, and game loop fit together.
+
+Topics explored:
+
+- **Track representation** – modelling a race track as a sequence of segments
+  (straights and curves) with associated properties such as width and curvature.
+- **Vehicle state** – tracking each car's position along the track, speed,
+  steering, and basic physics (acceleration, braking, friction).
+- **Collision / boundary detection** – deciding when a car leaves the track or
+  makes contact with another car.
+- **Lap & timing system** – detecting when a car crosses the start/finish line
+  and recording lap times.
+- **Game loop** – a simple fixed-timestep update loop that advances the
+  simulation each tick and hands rendering data to an external renderer.
+
+## License
+
+This is free and unencumbered software released into the public domain.
+See the [UNLICENSE](UNLICENSE) file for details.
